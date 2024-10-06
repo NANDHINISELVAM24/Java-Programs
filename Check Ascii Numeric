@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int number = scanner.nextInt();
+
+        if (number >= 48 && number <= 57) {
+            System.out.println("Yes, it is the ASCII value of a numeric character.");
+        } else {
+            System.out.println("No, it is not the ASCII value of a numeric character.");
+        }
+
+        scanner.close();
+    }
+}

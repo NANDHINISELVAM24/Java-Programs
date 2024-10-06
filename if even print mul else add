@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter n value: ");
+        int n = scanner.nextInt();
+        
+        System.out.print("Enter m value:");
+        int m = scanner.nextInt();
+
+        if (n%2 == 0 && m%2 == 0) {
+            System.out.println(n*m);
+        } else {
+            System.out.println(n+m);
+        }
+
+        scanner.close();
+    }
+}

@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+public class SmallestDivisiblePair {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the size of the array: ");
+        int n = scanner.nextInt();
+
+        if (n < 2) {
+            System.out.println(-1);
+            return;
+        }
+
+        int[] array = new int[n];
+        System.out.println("Enter the elements of the array:");
+        for (int i = 0; i < n; i++) {
+            array[i] = scanner.nextInt();
+        }
+
+        System.out.print("Enter the value of k: ");
+        int k = scanner.nextInt();
+
+        int minResult = Integer.MAX_VALUE;
+        int num1 = -1, num2 = -1;
+
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                int sum = array[i] + array[j];
+                int result = sum / k;
+                if (result < minResult) {
+                    minResult = result;
+                    num1 = array[i];
+                    num2 = array[j];
+                }
+            }
+        }
+
+        if (num1 == -1 && num2 == -1) {
+            System.out.println(-1);
+        } else {
+            System.out.println(num1 + " " + num2);
+        }
+
+        scanner.close();
+    }
+}

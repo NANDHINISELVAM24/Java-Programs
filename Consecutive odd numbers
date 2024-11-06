@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the start integer: ");
+        int start = scanner.nextInt();
+        
+        System.out.print("Enter the number of consecutive odd numbers to print: ");
+        int n = scanner.nextInt();
+
+        if (start % 2 == 0) {
+            start += 1;
+        }
+
+        for (int i = 0; i < n; i++) {
+            System.out.println(start + (i * 2));
+        }
+
+        scanner.close();
+    }
+}

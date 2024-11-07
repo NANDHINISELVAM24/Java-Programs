@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        int N = scanner.nextInt();
+        
+        int smallestNegative = Integer.MAX_VALUE;
+        boolean foundNegative = false;
+        
+        for (int i = 0; i < N; i++) {
+            int element = scanner.nextInt();
+            if (element < 0 && element < smallestNegative) {
+                smallestNegative = element;
+                foundNegative = true;
+            }
+        }
+        
+        if (foundNegative) {
+            System.out.println(smallestNegative);
+        } else {
+            System.out.println(-1);
+        }
+        
+        scanner.close();
+    }
+}

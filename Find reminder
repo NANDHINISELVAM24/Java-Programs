@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the dividend: ");
+        long dividend = scanner.nextLong();
+
+        System.out.print("Enter the divisor: ");
+        long divisor = scanner.nextLong();
+
+        long remainder = findRemainder(dividend, divisor);
+
+        System.out.println(remainder);
+    }
+
+    public static long findRemainder(long dividend, long divisor) {
+        while (dividend >= divisor) {
+            dividend -= divisor;
+        }
+        return dividend;
+    }
+}

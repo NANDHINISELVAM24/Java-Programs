@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int N = scanner.nextInt();
+
+        double product = 1.0;
+        for (int i = 0; i < N; i++) {
+            double value = scanner.nextDouble();
+            product *= value;
+        }
+
+        System.out.printf("%.2f", product);
+    }
+}

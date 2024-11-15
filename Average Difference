@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int N = scanner.nextInt();
+
+        double positiveSum = 0.0;
+        int positiveCount = 0;
+        double negativeSum = 0.0;
+        int negativeCount = 0;
+
+        for (int i = 0; i < N; i++) {
+            int value = scanner.nextInt();
+            if (value > 0) {
+                positiveSum += value;
+                positiveCount++;
+            } else if (value < 0) {
+                negativeSum += value;
+                negativeCount++;
+            }
+        }
+
+        double positiveAverage = 0;
+        if (positiveCount > 0) {
+            positiveAverage = positiveSum / positiveCount;
+        }
+
+        double negativeAverage = 0;
+        if (negativeCount > 0) {
+            negativeAverage = negativeSum / negativeCount;
+        }
+
+        double difference = positiveAverage - negativeAverage;
+
+        System.out.printf("%.2f", difference);
+    }
+}

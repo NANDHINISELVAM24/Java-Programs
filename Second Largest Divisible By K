@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int N = scanner.nextInt();
+        int k = scanner.nextInt();
+
+        int largestDivisible = Integer.MIN_VALUE;
+        int secondLargestDivisible = Integer.MIN_VALUE;
+
+        for (int i = 0; i < N; i++) {
+            int number = scanner.nextInt();
+            if (number % k == 0) {
+                if (number > largestDivisible) {
+                    secondLargestDivisible = largestDivisible;
+                    largestDivisible = number;
+                } else if (number > secondLargestDivisible && number != largestDivisible) {
+                    secondLargestDivisible = number;
+                }
+            }
+        }
+
+        if (secondLargestDivisible != Integer.MIN_VALUE) {
+            System.out.println(secondLargestDivisible);
+        } else {
+            System.out.println(-1);
+        }
+
+        scanner.close();
+    }
+}

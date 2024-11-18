@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int N = scanner.nextInt();
+
+        int smallestOdd = Integer.MAX_VALUE;
+
+        boolean foundOdd = false;
+
+        for (int i = 0; i < N; i++) {
+            int number = scanner.nextInt();
+            if (number % 2 != 0) {
+                if (number < smallestOdd) {
+                    smallestOdd = number;
+                }
+                foundOdd = true;
+            }
+        }
+
+        if (foundOdd) {
+            System.out.println(smallestOdd);
+        } else {
+            System.out.println(-1);
+        }
+
+        scanner.close();
+    }
+}

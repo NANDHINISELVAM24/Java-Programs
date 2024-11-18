@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int N = scanner.nextInt();
+        int k = scanner.nextInt();
+
+        int largestDivisible = Integer.MIN_VALUE;
+
+        boolean foundDivisible = false;
+
+        for (int i = 0; i < N; i++) {
+            int number = scanner.nextInt();
+            if (number % k == 0) {
+                if (number > largestDivisible) {
+                    largestDivisible = number;
+                }
+                foundDivisible = true;
+            }
+        }
+
+        if (foundDivisible) {
+            System.out.println(largestDivisible);
+        } else {
+            System.out.println(-1);
+        }
+
+        scanner.close();
+    }
+}
